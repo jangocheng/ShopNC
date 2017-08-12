@@ -1,0 +1,58 @@
+﻿@model ShopNC.Web.Areas.Admin.Models.UserInfoVM
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayout.cshtml";
+}
+<div>
+
+    @using (Ajax.BeginForm("Edite", "UserInfo", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "editeSuccess", OnBegin = "ajaxFromBegin" }, new { id = "ajaxForm" }))
+    {
+        @Html.HiddenFor(p=>p.ID)
+        @Html.HiddenFor(p=>p.Status)
+        @Html.HiddenFor(p=>p.IsDeleted)
+        @Html.HiddenFor(p=>p.CreateTime)
+        @Html.HiddenFor(p=>p.EditeTime)
+        <table>
+            <tr>
+                <td>用户名:</td>
+                <td>@Html.TextBoxFor(p => p.UserName)</td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td>@Html.TextBoxFor(p => p.Password)</td>
+            </tr>
+            <tr>
+                <td>姓名:</td>
+                <td>@Html.TextBoxFor(p => p.TrueName)</td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                @Html.DropDownListFor(p => p.Gender, new List<SelectListItem>(){
+                new SelectListItem(){Text="男",Value="1"},
+                new SelectListItem(){Text="女",Value="0"}
+               })
+            </td>
+        </tr>
+        <tr>
+            <td>邮箱:</td>
+            <td>@Html.TextBoxFor(p => p.Email)</td>
+        </tr>
+        <tr>
+            <td>电话:</td>
+            <td>@Html.TextBoxFor(p => p.TelePhone)</td>
+        </tr>
+        <tr>
+            <td>手机:</td>
+            <td>@Html.TextBoxFor(p => p.Phone)</td>
+        </tr>
+        <tr>
+            <td>地址:</td>
+            <td>@Html.TextBoxFor(p => p.Address)</td>
+        </tr>
+    </table>
+       <p style="text-align:center;">
+           <input type="submit" value="提交"/>
+       </p>
+    }
+</div>
+
