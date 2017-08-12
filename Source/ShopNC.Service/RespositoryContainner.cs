@@ -15,9 +15,9 @@ namespace ShopNC.Service
          static ContainerBuilder containerBuilder = new ContainerBuilder();
          static IContainer container = null;
 
-         static RepositoryContainner() 
+        static RepositoryContainner() 
         {
-            containerBuilder.RegisterType<DBSession>().As<IDBSession>().SingleInstance();
+            containerBuilder.RegisterType<DBSession>().As<IDBSession>();//IDBSession 不能为.SingleInstance()？
             container= containerBuilder.Build();
          }
 
@@ -32,13 +32,13 @@ namespace ShopNC.Service
         where T:class,new()
         {
              IBaseRepository<T> baseRepository = null;
-            if (baseRepository==null)
-            {
-                lock(o)
-                {
-                   baseRepository= new BaseRepository<T>();
-                }
-            }
+             if (baseRepository == null)
+             {
+                 lock (o)
+                 {
+                     baseRepository = new BaseRepository<T>();
+                 }
+             }
 
             return baseRepository;
         }

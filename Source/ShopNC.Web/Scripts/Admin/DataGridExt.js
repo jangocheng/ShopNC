@@ -30,7 +30,7 @@ function initList(option) {
 
 
 //修改 弹出层 通过iframe指向新页面
-function dealEditeSingle(url,dialogTitle,tip) {
+function dealEditeSingle(url,dialog, tip) {
     var rows = $("#"+gridId).datagrid('getSelections');
     if (rows.length != 1) {
         tip=isNull(tip)?"选择一条记录信息修改":tip;
@@ -39,18 +39,20 @@ function dealEditeSingle(url,dialogTitle,tip) {
     else {
         for (i = 0; i < rows.length; i++) {
             // alert(rows[i].ID);
-            var divEdite = '<div id="divEdite"><iframe id="ifrmEdite" src="' +url + rows[0].ID + '" scrolling="no" frameborder="0" width="100%" height="100%">';
+            var divEdite = '<div id="divEdite" style="overflow:hidden;"><iframe id="ifrmEdite" src="' + url + "/" + rows[0].ID + '" scrolling="no" frameborder="0"  style="width:100%; height:100%;">';
             divEdite += '</iframe></div>';
             $(divEdite).dialog({
-                title: isNull(dialogTitle) ? '修改' : dialogTitle,
-                width: 'auto',
-                height: 'auto',
+                title: isNull(dialog.title) ? '修改' : dialog.title,
+                width: isNull(dialog.width) ? '300' : dialog.width,
+                height: isNull(dialog.height) ? '300' : dialog.height,
+                onClose: function () {
+                    $("#divEdite").remove();
+                },
                 closed: false,
                 cache: false,
                 modal: true,
                 buttons: []
             });
-
         }
     }
 }
@@ -70,15 +72,18 @@ function dealEditeMore(url, dialogTitle, tip) {
         ids = ids.substring(0, ids.length - 1);
         for (i = 0; i < rows.length; i++) {
             // alert(rows[i].ID);
-            var divEdite = '<div id="divEdite"><iframe id="ifrmEdite" src="' + url + rows[0].ID + '" scrolling="no" frameborder="0" width="100%" height="100%">';
+            var divEdite = '<div id="divEdite" style="overflow:hidden;"><iframe id="ifrmEdite" src="' + url + "/" + ids + '" scrolling="no" frameborder="0" width="100%"  >';
             divEdite += '</iframe></div>';
             $(divEdite).dialog({
-                title: isNull(dialogTitle) ? '修改' : dialogTitle,
-                width: 'auto',
-                height: 'auto',
+                title: isNull(dialog.title) ? '修改' : dialog.title,
+                width: isNull(dialog.width) ? '300' : dialog.width,
+                height: isNull(dialog.height) ? '300' : dialog.height,
                 closed: false,
                 cache: false,
                 modal: true,
+                onClose:function(){
+                    $("#divEdite").remove();
+                },
                 buttons: []
             });
 
@@ -90,7 +95,7 @@ function dealEditeMore(url, dialogTitle, tip) {
 //处理删除
 
 function dealDelete() {
-    var rows = $("#tt").datagrid('getSelections');
+    var rows = $("#" + gridId).datagrid('getSelections');
     var ids = "";
     if (rows.length <= 0) {
         $.messager.alert("消息提示", "选择信息进行删除");
@@ -105,11 +110,7 @@ function dealDelete() {
             }
             ids = ids.substring(0, ids.length - 1);
             $.post("/UserInfo/Delete", { "ids": ids }, function (data) {
-                //删除成功 取消选中项
-                $('#tt').datagrid("clearSelections");
-
-                //重新加载数据表格
-                LoadInitData();
+                deleteSuccess(data);
             })
 
         })
@@ -117,7 +118,6 @@ function dealDelete() {
     }
 
 }
-
 
 //检查是否为null or undefined
 function  isNull(value) {
@@ -128,14 +128,3 @@ function  isNull(value) {
     return false;
 }
 
-//把表单对话框关闭，然后 重新加载一下表格的数据
-function affterAdd() {
-    $("#addDialog").dialog("close");
-    LoadInitData();
-
-}
-//修改用户之后调用次方法
-function aterUpdateEdit() {
-    $('#divEdite').dialog("close");
-    $('#'+gridId).datagrid('reload');
-}

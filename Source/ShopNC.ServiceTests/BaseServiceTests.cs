@@ -57,7 +57,10 @@ namespace ShopNC.Service.Tests
         [TestMethod()]
         public void UpdateEntityTest()
         {
-            Assert.Fail();
+            var user = bll.LoadEntity(p=>true).FirstOrDefault();
+            user.TrueName = "edite";
+            var result= bll.UpdateEntity(user);
+            Assert.IsTrue(result);
         }
 
         [TestMethod()]

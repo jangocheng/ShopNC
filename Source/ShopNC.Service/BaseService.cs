@@ -14,18 +14,15 @@ namespace ShopNC.Service
         where T:class,new()
     {
 
-        private static IDBSession session = null;
+        private  IDBSession session = null;
 
         protected IDBSession DBSession
         {
             get { return session; }
         }
-        static BaseService() 
+        public BaseService() 
          {
-             if (session==null)
-             {
-                 session=new RepositoryContainner().Container.Resolve<IDBSession>();
-             }
+            session=new RepositoryContainner().Container.Resolve<IDBSession>();
          }
 
         public IBaseRepository<T> baseRepository = new RepositoryContainner().GetBaseRepository<T>();
@@ -40,9 +37,7 @@ namespace ShopNC.Service
         public bool UpdateEntity(T entity)
         {
           var result= baseRepository.UpdateEntity(entity);
-          DBSession.SaveChanges();
-
-          return result;
+          return DBSession.SaveChanges()>0;
         }
 
         public bool DeleteEntity(T entity)

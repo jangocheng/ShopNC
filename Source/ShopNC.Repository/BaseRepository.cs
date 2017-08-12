@@ -16,10 +16,10 @@ namespace ShopNC.Repository
         //解耦了 当前UserInfoRepository跟上下文的直接依赖。
         //保证了线程内上下文的实例唯一
 
-        private static IDBContextFactory dbContextFactory = new EFContextFactory();
+        private  IDBContextFactory dbContextFactory = new EFContextFactory();
 
-        static DbContext db;
-        static BaseRepository()
+        protected DbContext db;
+        public BaseRepository()
         {
             db = dbContextFactory.GetCurrentContextInstence();
 

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using ShopNC.Entity.Mapping;
 using ShopNC.Common;
 using System.Linq.Expressions;
+using ShopNC.Web.Areas.Admin.Models;
 
 namespace ShopNC.Web.Areas.Admin.Controllers
 {
@@ -45,6 +46,36 @@ namespace ShopNC.Web.Areas.Admin.Controllers
             var result = new { total = cond.TotalRecord, rows =data };
             return Json(result);
             
+        }
+
+        public async Task<ActionResult> Edite(int id) 
+        {
+            var model = (await userBll.LoadEntityAsync(p => p.ID ==id)).FirstOrDefault();
+            return View(model.MapTo<UserInfoVM>());
+        }
+
+        [HttpPost]
+        public  JsonResult Edite(UserInfoVM user) 
+        {
+            var model = user.MapTo<UserInfo>();
+            try
+            {
+                var result = userBll.UpdateEntity(model);
+
+                if (result)
+                {
+                    return Json(new Form { Code = 1, Message = "修改成功!" });
+                }
+                else
+                {
+                    return Json(new Form { Code = 0, Message = "修改失败!" });
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 	}
 }
