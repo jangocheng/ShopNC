@@ -22,3 +22,15 @@ D:\Git\ShopNC\Source\ShopNC.IRepository\bin\Debug\EntityFramework.SqlServer.xml
 D:\Git\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.csprojResolveAssemblyReference.cache
 D:\Git\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.dll
 D:\Git\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.pdb
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\ShopNC.IRepository.dll.config
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\ShopNC.IRepository.dll
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\ShopNC.IRepository.pdb
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\EntityFramework.dll
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\ShopNC.Entity.dll
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\ShopNC.Entity.pdb
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\EntityFramework.xml
+E:\个人\ShopNC\Source\ShopNC.IRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\个人\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.csprojResolveAssemblyReference.cache
+E:\个人\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.dll
+E:\个人\ShopNC\Source\ShopNC.IRepository\obj\Debug\ShopNC.IRepository.pdb

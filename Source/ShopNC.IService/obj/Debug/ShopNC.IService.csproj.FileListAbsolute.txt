@@ -13,3 +13,14 @@ D:\Git\ShopNC\Source\ShopNC.IService\bin\Debug\EntityFramework.xml
 D:\Git\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.csprojResolveAssemblyReference.cache
 D:\Git\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.dll
 D:\Git\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.pdb
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.IService.dll
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.IService.pdb
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.Entity.dll
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.IRepository.dll
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\EntityFramework.dll
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.Entity.pdb
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\ShopNC.IRepository.pdb
+E:\个人\ShopNC\Source\ShopNC.IService\bin\Debug\EntityFramework.xml
+E:\个人\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.csprojResolveAssemblyReference.cache
+E:\个人\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.dll
+E:\个人\ShopNC\Source\ShopNC.IService\obj\Debug\ShopNC.IService.pdb
