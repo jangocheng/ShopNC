@@ -1,4 +1,0 @@
-D:\Git\ShopNC\Source\ShopNC.DTO\bin\Debug\ShopNC.DTO.dll
-D:\Git\ShopNC\Source\ShopNC.DTO\bin\Debug\ShopNC.DTO.pdb
-D:\Git\ShopNC\Source\ShopNC.DTO\obj\Debug\ShopNC.DTO.dll
-D:\Git\ShopNC\Source\ShopNC.DTO\obj\Debug\ShopNC.DTO.pdb
