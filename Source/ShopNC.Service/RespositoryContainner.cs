@@ -42,6 +42,15 @@ namespace ShopNC.Service
 
             return baseRepository;
         }
+
+       /// <summary>
+       /// 获取DBSession
+       /// </summary>
+       /// <returns></returns>
+        public IDBSession GetIDBSession()
+        {
+           return this.Container.Resolve<IDBSession>();
+        }
        
     }
 }
