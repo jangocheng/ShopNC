@@ -40,6 +40,11 @@ namespace ShopNC.Repository
 
         }
 
+        public List<T> SqlQuery<T>(string sql, params System.Data.SqlClient.SqlParameter[] parameters)
+        {
+            return CurrentEFContext.Database.SqlQuery<T>(sql, parameters).ToList();
+
+        }
         //调用当前  的线程内唯一实例的 EF上下文，保存回数据库
         public int SaveChanges()
         {

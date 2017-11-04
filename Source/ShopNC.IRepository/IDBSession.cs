@@ -10,6 +10,7 @@ namespace ShopNC.IRepository
     public partial interface IDBSession
     {
         int ExcuteSql(string sql, params SqlParameter[] parameters);
+        List<T> SqlQuery<T>(string sql, params SqlParameter[] parameters);
         int SaveChanges();
 
         int SaveChagesAsync();
