@@ -41,16 +41,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-
+<<<<<<< HEAD
 *.dll
-/Source/ShopNC.Common/obj
-/Source/ShopNC.Common/obj
-/Source/ShopNC.DTO/obj
-/Source/ShopNC.DTO/bin
-/Source/ShopNC.DTO/bin
-/Source/ShopNC.DTO/obj
-/Source/ShopNC.Entity/obj
-/Source/ShopNCTest/bin
-/Source/ShopNCTest/obj
-
-/Source/ShopNC.Service/obj
+=======
+>>>>>>> 03bc63791333f565ad9b3267cec36054ea72f2a4
